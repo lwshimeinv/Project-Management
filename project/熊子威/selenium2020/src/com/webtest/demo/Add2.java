@@ -7,21 +7,23 @@ import com.webtest.demo1.Base1;
 public class Add2 extends Base1{
 	@Test
 	public void testAddPictures() throws InterruptedException {
-		webtest.open("http://www.roqisoft.com/zhsx/");
+		webtest.open("http://localhost:100/admin.php?s=/admin/logininfo.html");
 		webtest.click("xpath=//a[text()='登录']");
-		webtest.type("name=user", "xzw");
-		webtest.type("name=pw", "xzw");
+		webtest.type("name=user", "admin");
+		webtest.type("name=pw", "shopxo");
 		webtest.click("xpath=//input[@type='submit']");
 		
 		Thread.sleep(1000);
 		
-		webtest.mouseToElement("xpath=//strong[text()='我的空间']");
+		webtest.mouseToElement("xpath=//strong[text()='查看首页']");
 		Thread.sleep(1000);
-		webtest.click("xpath=//a[text()='个人相册']");
-		webtest.click("xpath=//strong[text()='点击上传图片']");
+		webtest.click("xpath=//a[text()='注册']");
+		webtest.click("xpath=//strong[text()='账号注册']");
 		webtest.enterFrame(0);
-		webtest.type("name=attach[]", "E:\\MonkeyKing.jpg");
-		webtest.click("xpath=//input[@value='上传']");
+		webtest.type("name=user", "admin123");
+		webtest.type("name=pw", "123456");
+		webtest.type("name=verify_code", "9W9K");
+		webtest.click("xpath=//input[@value='注册']");
 		Thread.sleep(3000);
 		webtest.leaveFrame();
 	}

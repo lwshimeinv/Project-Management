@@ -9,10 +9,10 @@ import com.webtest.demo1.Base1;
 public class Admin2 extends Base1{
 	@Test
 	public void testLogin() {
-		webtest.open("http://www.roqisoft.com/zhsx/");
+		webtest.open("http://localhost:100/");
 		webtest.click("xpath=//a[text()='µÇÂ¼']");
-		webtest.type("name=user", "xzw");
-		webtest.type("name=pw", "xzw");
+		webtest.type("name=user", "admin");
+		webtest.type("name=pw", "123456");
 		webtest.click("xpath=//input[@type='submit']");
 	}
 }

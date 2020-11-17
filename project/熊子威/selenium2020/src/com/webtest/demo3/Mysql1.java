@@ -14,13 +14,13 @@ public class Mysql1 {
 
 	
 	public  Object[][] getTestDataByMysql(String sql) {
-		String url = "jdbc:mysql://127.0.0.1:3306/mymovie";
+		String url = "jdbc:mysql://127.0.0.1:3306/shopxo";
 		List<Object[]> records = new ArrayList<Object[]>();
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager
-					.getConnection(url, "root", "123456");
+					.getConnection(url, "root", "root");
 			if (!conn.isClosed()) {
 				System.out.println("�������ݿ�ɹ�?");
 			}

@@ -14,22 +14,23 @@ public class Add3 extends Base1{
 	
 	@Test
 	public void testAddTravels() throws InterruptedException, IOException {
-		webtest.open("http://www.roqisoft.com/zhsx/");
+		webtest.open("http://localhost:100/admin.php?s=/admin/logininfo.html");
 		webtest.click("xpath=//a[text()='登录']");
-		webtest.type("name=user", "xzw");
-		webtest.type("name=pw", "xzw");
+		webtest.type("name=user", "admin");
+		webtest.type("name=pw", "shopxo");
 		webtest.click("xpath=//input[@type='submit']");
 		
 		
-		webtest.click("xpath=//strong[text()='我的空间']");
-		webtest.click("xpath=//u[text()='点我写游记']");
+		webtest.mouseToElement("xpath=//strong[text()='查看首页']");
+		Thread.sleep(1000);
+		webtest.click("xpath=//a[text()='注册']");
+		webtest.click("xpath=//strong[text()='手机号注册']");
+		webtest.enterFrame(0);
+		webtest.type("name=user", "18871008816");
+		webtest.type("name=pw", "123456");
+		webtest.type("name=verify_code", "464R");
+		webtest.click("xpath=//input[@value='注册']");
 		Thread.sleep(3000);
-		webtest.type("name=title",Read1.getPropertyValue("title") );
-		webtest.tapClick();
-		webtest.tapType(Read1.getPropertyValue("tapType"));
-		webtest.type("id=sort", "熊子威");
-		Thread.sleep(3000);
-		webtest.click("xpath=//input[@type='submit']");
-		Thread.sleep(3000);
+		webtest.leaveFrame();
 	}
 }

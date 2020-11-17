@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 public class Data1 {
 
 	
-	@DataProvider(name="zl_shop")
+	@DataProvider(name="shopxo")
 	public  Object[][] getTxtData() throws IOException{
 		return new  TxtData1().getTxtUser("data/user.txt");
 	}
 	@DataProvider(name="movie")
 	public  Object[][] getMovieData() throws IOException{
-		return new  Excel1().getTestDataByExcel("data/movie.xlxs","Sheet1");
+		return new  Excel1().getTestDataByExcel("data/shopxo.xlxs","Sheet1");
 	}
 	@Test(dataProvider="txt")
 	public void getData(String a,String b) {
@@ -30,7 +30,7 @@ public class Data1 {
 	@DataProvider(name="mysql")
 	public Object[][] getMysqlDada() throws IOException{
 		return new Mysql1().getTestDataByMysql("SELECT filmname, petname\r\n" + 
-				"FROM `mm_movie` ");
+				"FROM `mm_shopxo` ");
 	}
 	
 	@Test(dataProvider="mysql")

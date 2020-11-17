@@ -7,21 +7,23 @@ import com.webtest.demo1.Base1;
 public class Add1 extends Base1 {
 	@Test
 	public void testAddEvaluation() throws InterruptedException {
-		webtest.open("http://www.roqisoft.com/zhsx/");
+		webtest.open("http://localhost:100/admin.php?s=/admin/logininfo.html");
 		webtest.click("xpath=//a[text()='登录']");
-		webtest.type("name=user", "xzw");
-		webtest.type("name=pw", "xzw");
+		webtest.type("name=user", "admin");
+		webtest.type("name=pw", "shopxo");
 		webtest.click("xpath=//input[@type='submit']");
 
 		Thread.sleep(1000);
 
-		webtest.open("http://www.roqisoft.com/zhsx/blog/");
-		webtest.click("xpath=//span[@class='more']/a[text()='阅读全文']");
+		webtest.open("http://localhost:100/");
+		webtest.click("xpath=//span[@class='more']/a[text()='登录']");
 		String javascript = "var top=document.documentElement.scrollTop=1000";
 		webtest.runJs(javascript);
-		webtest.type("name=comment", "好");
+		webtest.type("name=user", "admin");
+		webtest.type("name=pw", "123456");
+		webtest.type("name=verify_code", "E7UK");
 		Thread.sleep(3000);
-		webtest.click("xpath=//input[@value=\"好了！(Ctrl+Enter)\"]");
+		webtest.click("xpath=//input[@type='submit']");
 		Thread.sleep(3000);
 	}
 }
