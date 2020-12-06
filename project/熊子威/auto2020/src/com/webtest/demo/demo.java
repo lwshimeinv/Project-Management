@@ -3,9 +3,10 @@ package com.webtest.demo;
 import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.webtest.core.BaseTest;
 
-public class demo extends BaseTest{
+import com.webtest.demo1.Base1;
+
+public class Demo extends Base1{
 	@Test
 	public void demo1() {
 		Assert.assertEquals(1, 2);

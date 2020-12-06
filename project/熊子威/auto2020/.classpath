@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="libs/guice-4.2.2.jar"/>
 	<classpathentry kind="lib" path="libs/freemarker-2.3.30.jar"/>
 	<classpathentry kind="lib" path="libs/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="libs/org.testng_7.1.0.r202001120626.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

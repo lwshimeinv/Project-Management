@@ -369,7 +369,7 @@ public class MaoYan50 extends BaseTest{
 		webtest.click("xpath=//a[contains(text(),'5000-8000')]");
 	}
 	
-	@Test(priority = 96)
+	@Test(priority = 46)
 	public void test46() {
 		webtest.click("xpath = //span[contains(text(),'数码办公')]");
 		webtest.click("xpath=//a[contains(text(),'佳洁士')]");
