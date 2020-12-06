@@ -2,10 +2,9 @@ package com.webtest.MaoYan;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import com.webtest.demo1.Base1;
 
-import com.webtest.core.BaseTest;
-
-public class MaoYan50 extends BaseTest{
+public class MaoYan50 extends Base1{
 	
 	@BeforeMethod
 	public void test0(){
