@@ -6,8 +6,8 @@ import javax.mail.PasswordAuthentication;
 import java.util.Date;
 import java.util.Properties;
 
-import javax.activation.DataHandler;
-import javax.activation.FileDataSource;
+//import javax.activation.DataHandler;
+//import javax.activation.FileDataSource;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -23,9 +23,9 @@ import javax.mail.internet.MimeUtility;
 public class MailUtil {
 	static String server = "smtp.163.com";
 	static String protocol = "smtp";
-	static String from = "姊佸井";
-	static String user = "testliangwei@163.com";
-	static String password = "XQHDCVXVXKWDCZJC";
+	static String from = "周心羽";
+	static String user = "zhouxinyu00420@163.com";
+	static String password = "zxy721025";
 
 	public static void sendEmail(String email, String subject,String body) throws UnsupportedEncodingException {
 		try {
@@ -144,7 +144,7 @@ public class MailUtil {
 //		mimeMultipart.addBodyPart(mimeBodyPart);
 //		mimeMultipart.setSubType("mixed");
 //		File file = new File("D:\\java_workplace\\auto2020\\conf\\reportTemplate.html");
-		MailUtil.sendEmail("zhouxinyu000420@163.com", "周心羽-2018011866","zxy");
+		MailUtil.sendEmail("zhouxinyu00420@163.com", "周心羽-2018011866","zxy");
 		
 	}
 
