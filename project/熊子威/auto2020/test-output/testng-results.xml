@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="35325" started-at="2020-11-27T15:08:55 CST" finished-at="2020-11-27T15:09:30 CST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="35325" started-at="2020-11-27T15:08:55 CST" finished-at="2020-11-27T15:09:30 CST">
+      <class name="com.webtest.testCases.testCases">
+        <test-method status="PASS" signature="doBeforeClass()[pri:0, instance:com.webtest.testCases.testCases@22a67b4]" name="doBeforeClass" is-config="true" duration-ms="13729" started-at="2020-11-27T15:08:55 CST" finished-at="2020-11-27T15:09:08 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doBeforeClass -->
+        <test-method status="PASS" signature="test0()[pri:0, instance:com.webtest.testCases.testCases@22a67b4]" name="test0" is-config="true" duration-ms="14933" started-at="2020-11-27T15:09:08 CST" finished-at="2020-11-27T15:09:23 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test0 -->
+        <test-method status="PASS" signature="test1()[pri:1, instance:com.webtest.testCases.testCases@22a67b4]" name="test1" duration-ms="4121" started-at="2020-11-27T15:09:23 CST" finished-at="2020-11-27T15:09:27 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="doAfterMethod()[pri:0, instance:com.webtest.testCases.testCases@22a67b4]" name="doAfterMethod" is-config="true" duration-ms="2501" started-at="2020-11-27T15:09:27 CST" finished-at="2020-11-27T15:09:30 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAfterMethod -->
+      </class> <!-- com.webtest.testCases.testCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
