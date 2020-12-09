@@ -33,7 +33,7 @@ public class Demo2 extends BaseTest{
 	    webtest.click("xpath=//span[text()='系统设置']");
 	    webtest.click("xpath=//span[text()='后台配置']");
 	    
-  }    
+  }     
 	    
 	    
 	    
@@ -41,7 +41,7 @@ public class Demo2 extends BaseTest{
   public void test3() throws InterruptedException {
 	    webtest.click("xpath=//span[text()='系统设置']");
 	    webtest.click("xpath=//span[text()='后台配置']");
-	    webtest.enterFrame("ifcontent");
+	     
 	    webtest.click("xpath=//button[text()='保存'");
 	    Thread.sleep(1000);	
   }      
@@ -483,7 +483,137 @@ public class Demo2 extends BaseTest{
   public void test42() throws InterruptedException {
 	    webtest.click("xpath=//a[@target='_blank'] ");	         
 	    Thread.sleep(1000);	
-  } 
+  }   
+  
+   
+  //站点类型修改
+  @Test
+  public void tes43() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='站点类型']");
+	    webtest.click("xpath=//div[@class='chosen-drop']");
+	    webtest.click("xpath=//li[@class='active-result highlighted']");
+	    webtest.click("xpath=//div[@class='chosen-drop']");
+	    webtest.click("xpath=//li[@class='active-result highlighted']");
+	    webtest.click("xpath=//div[@class='chosen-drop']");
+	    webtest.click("xpath=//li[@class='active-result highlighted']");
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
+  
+  
+  //修改用户注册
+  
+  @Test
+  public void tes44() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='用户注册']");
+	    webtest.click("xpath=//span[text()='开启']");	   
+	    webtest.click("xpath=//li[@class='active-result highlighted']");
+	    webtest.click("xpath=//span[text()='否']");	   
+	    webtest.click("xpath=//li[@class='active-result highlighted']");
+	    webtest.click("xpath=//span[text()='开启']");	   
+	    webtest.click("xpath=//li[@class='active-result highlighted']");
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
+  
+  
+ //修改用户登录
+  
+  @Test
+  public void tes45() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='用户登录']");
+	    webtest.click("xpath=//span[text()='开启']");	   
+	    webtest.click("xpath=//li[@class='active-result highlighted']");	    
+	    webtest.click("xpath=//span[text()='开启']");	   
+	    webtest.click("xpath=//li[@class='active-result highlighted']");
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
+  
+  
+  
+  //修改验证码
+  
+  @Test
+  public void tes46() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='验证码']");
+	    webtest.click("xpath=//span[text()='开启']");	   
+	    webtest.click("xpath=//li[@class='active-result highlighted']");	    	    
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
+  
+  
+  
+  
+  //修改订单售后
+  
+  @Test
+  public void tes47() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='订单售后']");
+	    webtest.click("name=home_order_aftersale_return_launch_day");
+	    webtest.type("name=home_order_aftersale_return_launch_day", "100");
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
+  
+  //修改搜索
+  
+  @Test
+  public void tes48() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='搜索']");
+	    webtest.click("xpath=//span[text()='自定义']");	   
+	    webtest.click("xpath=//li[@class='active-result']");	    	    
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
+  
+  
+  //修改商品
+  @Test
+  public void tes49() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='商品']");
+	    webtest.click("xpath=//span[text()='否']");	   
+	    webtest.click("xpath=//li[@class='active-result']");	    	    
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
+  
+  
+  
+  //修改扩展项
+  @Test
+  public void tes50() throws InterruptedException {
+	    webtest.click("xpath=//span[text()='站点配置']");
+	    webtest.click("xpath=//span[text()='站点设置']");
+	    webtest.enterFrame("ifcontent");
+	    webtest.click("xpath=//a[text()='扩展项']");
+	    webtest.click("xpath=//span[text()='否']");	   
+	    webtest.click("xpath=//li[@class='active-result']");	    	    
+	    webtest.click("xpath=//button[text()='保存']");
+	    Thread.sleep(1000);	
+  }         
   
   
   
