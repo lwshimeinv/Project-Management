@@ -1,0 +1,76 @@
+* {
+	margin-left:auto;
+	padding-left:0;
+	
+}
+/* body {
+	background-color: #BBFFEE
+	color:#fff;
+}
+ul {
+} */
+.win {
+	width: 1200px;
+	padding-right:30;
+}
+
+.con {
+	margin-top: 5px;
+	
+	padding: 30px;
+	font-size: 16px;
+	color: #333;
+	
+}
+.clear {
+	clear: both
+}
+.lt {
+	float: left;
+	width: 100%;
+	height:350px;
+	color: white;
+	background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3385455048,799003949&fm=26&gp=0.jpg);
+}
+.rt {
+	float: right;
+	width: 48%;
+}
+.lt P {
+	line-height: 40px;
+	margin-top: 30px;
+}
+.maoba {
+	margin-top: 5px;
+}
+.maoba h2 {
+	line-height: 40px;
+	border-bottom: 1px solid #fff;
+}
+.text p {
+	line-height: 10px;
+}
+.text {
+	float: right;
+	width: 79%;
+	padding:10px 0;
+}
+.pic {
+	float: left;
+	width: 20%;
+	padding: 20px 0;
+}
+.tup {
+	margin-top: 30px;
+}
+.tup li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.tup li img {
+	width: 100%;
+	height: 230px;
+}
