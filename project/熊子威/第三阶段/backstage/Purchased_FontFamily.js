@@ -39,7 +39,8 @@ const Purchased_FontFamily = () => {
                     <li><NavLink to='/doc/guide'>功能测试</NavLink></li>
                     <li><NavLink to='/doc/api'>测试单</NavLink></li>
                     <li><NavLink to='/doc/hooks'>报告</NavLink></li>
-                    <li><NavLink to='/doc/hooks'>套件</NavLink></li>
+                    <li><NavLink to='/doc/hooks'>套件统计</NavLink></li>
+
             </div>
 
             <div className = 'FontFamily2'>
@@ -54,11 +55,12 @@ const Purchased_FontFamily = () => {
                     <li><NavLink to='/doc/core'>搜索</NavLink></li>
                     <li><NavLink to='/doc/guide'>报表</NavLink></li>
                     <li><NavLink to='/doc/api'>导出</NavLink></li>
-                    <li><NavLink to='/doc/hooks'>批量提交Bug数量</NavLink></li>
+                    <li><NavLink to='/doc/hooks'>批量提交Bug</NavLink></li>
             </div>
+            <img src={require('./image/table.jpg')} style={{width:'100%'}} />
             <div className = 'FontFamily3'>
-                    <text>暂时没有bug</text>
-                    <text style={{color:"bule"}}><NavLink to='/doc/guide'>+提bug</NavLink></text>
+                    {/* <text>自动化用例列表</text> */}
+                    <text style={{color:"bule"}}><NavLink to='/doc/guide'>自动化用例列表</NavLink></text>
             </div>
             
         </div>

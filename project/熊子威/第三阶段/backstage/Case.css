@@ -9,10 +9,10 @@ ul li{
     text-align: center;
 }
 .FontFamily li{
-    
     list-style: none;
     float: left;
-    margin-left:30px ;
+    padding-left:15px;
+    padding-right: 15px;
     font-size: 16px;
 }
 .FontFamily1{
@@ -45,7 +45,7 @@ ul li{
     margin-left:35px ;
     font-size: 16px;
 }
-.FontFamily3{
+/* .FontFamily3{
     display: inline;
     margin-right: 80px;
     width: 1100px;
@@ -53,4 +53,4 @@ ul li{
     float: right;
     margin-right: 0px;
     text-align: center;
-}
+} */
