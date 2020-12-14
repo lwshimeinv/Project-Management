@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.webtest.core.BaseTest;
 
-public class MaoYan50 extends BaseTest{
+public class MaoYan50 extends BaseTest{//ÐÜ×ÓÍþ  µÇÂ¼ºÍÊ×Ò³
 	
 	@BeforeMethod
 	public void test0() throws InterruptedException{
