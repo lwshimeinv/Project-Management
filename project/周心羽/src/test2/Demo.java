@@ -1,5 +1,9 @@
 package test2;
 
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
+import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -8,35 +12,40 @@ import com.webtest.core.BaseTest;
 public class Demo extends BaseTest{
 	String url="http://localhost/admin.php?s=/admin/logininfo.html";
 	
-	@BeforeMethod
+	@BeforeMethod(description = "ç™»å½•åå°")
 	public void test1() throws InterruptedException {
-		webtest.open(url);
-		Thread.sleep(1000);
-		webtest.click("name=username");
-		webtest.type("name=username", "admin");
-		webtest.click("name=login_pwd");
-		webtest.type("name=login_pwd", "shopxo");
-		Thread.sleep(1000);
-		webtest.click("xpath=//button[text()='µÇÂ¼']");
-		Thread.sleep(1000);
+		try {
+			webtest.open(url);
+			Thread.sleep(1000);
+			webtest.click("name=username");
+			webtest.type("name=username", "admin");
+			webtest.click("name=login_pwd");
+			webtest.type("name=login_pwd", "shopxo");
+			Thread.sleep(1000);
+			webtest.click("xpath=//button[text()='ç™»å½•']");
+			Thread.sleep(1000);
+		}catch (InterruptedException e) {
+			e.printStackTrace();
+			Reporter.log(e.getMessage());
+		}		
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘å¯¼èˆª",priority = 1)
 	public void test2() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='µ¼º½¹ÜÀí']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å¯¼èˆªç®¡ç†']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='±à¼­']");
-		Thread.sleep(1000);	
+		webtest.click("xpath=//span[text()='ç¼–è¾‘']");
 //		webtest.click("xpath=/html/body/div[2]/div/div[1]/div/div[2]/form/div[6]/div/label[2]/span/i[2]");
-		webtest.click("xpath=//button[text()='±£´æ']");
-		Thread.sleep(1000);	
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);	
 	}
-	@Test
+	
+	@Test(description = "æ–°å¢å¯¼èˆª",priority = 2)
 	public void test3() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='µ¼º½¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å¯¼èˆªç®¡ç†']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//button");
 		webtest.click("xpath=//button[@class='am-btn am-btn-link am-btn-xs am-btn-block am-text-left am-padding-horizontal-sm am-icon-plus submit-add']");
@@ -45,496 +54,577 @@ public class Demo extends BaseTest{
 		webtest.type("name=name", "test01");
 		webtest.click("name=url");
 		webtest.type("name=url", "https://www.baidu.com");
-		webtest.click("xpath=//button[text()='±£´æ']");
-	}
+		webtest.click("xpath=//button[text()='ä¿å­˜']"); 
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);	
+		}
 	
-	@Test
+	@Test(description = "åˆ é™¤å¯¼èˆª",priority = 3)
 	public void test4() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='µ¼º½¹ÜÀí']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å¯¼èˆªç®¡ç†']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-     	webtest.click("xpath=//span[text()='È·¶¨']");
-		Thread.sleep(1000);	
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+     	webtest.click("xpath=//span[text()='ç¡®å®š']");
+     	boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);	
 	}
 		
-	@Test
+	@Test(description = "æœç´¢å¯¼èˆª",priority = 4)
 	public void test5() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='µ¼º½¹ÜÀí']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å¯¼èˆªç®¡ç†']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("name=f1p");
-		webtest.type("name=f1p", "ÉÌÆ··ÖÀà");
+		webtest.type("name=f1p", "å•†å“åˆ†ç±»");
 		webtest.click("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
-		Thread.sleep(1000);	
+		boolean flag =webtest.isDisplayed("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		assertTrue(flag);	
 	}
 	
-	@Test
+	@Test(description = "æœç´¢é¡µé¢",priority = 5)
 	public void test6() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='×Ô¶¨ÒåÒ³Ãæ']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='è‡ªå®šä¹‰é¡µé¢']");
 		Thread.sleep(1000);
 		webtest.enterFrame("ifcontent");
 		webtest.click("name=f1p");
 		webtest.type("name=f1p", "add");
 		webtest.click("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
-		Thread.sleep(1000);	
+		boolean flag =webtest.isDisplayed("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		assertTrue(flag);	
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤é¡µé¢",priority = 6)
 	public void test7() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='×Ô¶¨ÒåÒ³Ãæ']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='è‡ªå®šä¹‰é¡µé¢']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
-		Thread.sleep(1000);	
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘é¡µé¢",priority = 7)
 	public void test8() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='×Ô¶¨ÒåÒ³Ãæ']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='è‡ªå®šä¹‰é¡µé¢']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//a[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
-		Thread.sleep(1000);	
+		webtest.click("xpath=//a[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 
 
-	@Test
+	@Test(description = "æ–°å¢é¡µé¢",priority = 8)
 	public void test10() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='×Ô¶¨ÒåÒ³Ãæ']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='è‡ªå®šä¹‰é¡µé¢']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//a[@class='am-btn am-btn-secondary am-radius am-btn-xs am-icon-plus']");
 		webtest.click("name=title");
 		webtest.type("name=title", "test01");
 		webtest.enterFrame("ueditor_1");
 		webtest.click("xpath=/html/body");
-		webtest.type("xpath=/html/body", "²âÊÔ²âÊÔ²âÊÔ²âÊÔ²âÊÔ²âÊÔ");
-		Thread.sleep(1000);	
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.type("xpath=/html/body", "æµ‹è¯•æµ‹è¯•æµ‹è¯•æµ‹è¯•æµ‹è¯•æµ‹è¯•");	
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æŸ¥çœ‹é¡µé¢è¯¦æƒ…",priority = 9)
 	public void test9() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='×Ô¶¨ÒåÒ³Ãæ']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='è‡ªå®šä¹‰é¡µé¢']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 	    webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+	    boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
 
-	@Test
+	@Test(description = "æ–°å¢é“¾æ¥",priority = 10)
 	public void test11() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÑÇéÁ´½Ó']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å‹æƒ…é“¾æ¥']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-radius am-btn-xs am-icon-plus submit-add']");
 		webtest.click("name=name");
 		webtest.type("name=name", "test01");
 		webtest.click("name=url");
 		webtest.type("name=url", "https://www.baidu.com");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤é“¾æ¥",priority = 11)
 	public void test12() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÑÇéÁ´½Ó']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å‹æƒ…é“¾æ¥']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 
-	@Test
+	@Test(description = "æŸ¥çœ‹é“¾æ¥è¯¦æƒ…",priority = 12)
 	public void test13() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÑÇéÁ´½Ó']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å‹æƒ…é“¾æ¥']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 		webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘é“¾æ¥",priority = 13)
 	public void test14() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÑÇéÁ´½Ó']");
-		Thread.sleep(1000);
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å‹æƒ…é“¾æ¥']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//a[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//span[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æœç´¢é“¾æ¥",priority = 14)
 	public void test15() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÑÇéÁ´½Ó']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å‹æƒ…é“¾æ¥']");
 		Thread.sleep(1000);
 		webtest.enterFrame("ifcontent");
 		webtest.click("name=f1p");
-		webtest.type("name=f1p", "²âÊÔ");
+		webtest.type("name=f1p", "æµ‹è¯•");
 		webtest.click("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
-		Thread.sleep(1000);	
+		boolean flag =webtest.isDisplayed("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		assertTrue(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤è½®æ’­",priority = 15)
 	public void test16() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ê×Ò³ÂÖ²¥']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='é¦–é¡µè½®æ’­']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æŸ¥çœ‹è½®æ’­è¯¦æƒ…",priority = 16)
 	public void test17() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ê×Ò³ÂÖ²¥']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='é¦–é¡µè½®æ’­']");
 		Thread.sleep(1000);
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 		webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘è½®æ’­",priority = 17)
 	public void test18() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ê×Ò³ÂÖ²¥']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='é¦–é¡µè½®æ’­']");
 		Thread.sleep(1000);
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//a[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//a[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æœç´¢è½®æ’­",priority = 18)
 	public void test19() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ê×Ò³ÂÖ²¥']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='é¦–é¡µè½®æ’­']");
 		Thread.sleep(1000);
 		webtest.enterFrame("ifcontent");
 		webtest.click("name=f1p");
-		webtest.type("name=f1p", "º£ÑóµÄÎ´À´");
+		webtest.type("name=f1p", "æµ·æ´‹çš„æœªæ¥");
 		webtest.click("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		boolean flag =webtest.isDisplayed("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		assertTrue(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤æ“ä½œ",priority = 19)
 	public void test20() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='É¸Ñ¡¼Û¸ñ']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='ç­›é€‰ä»·æ ¼']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//button[@class='am-btn am-btn-danger am-btn-xs am-radius am-icon-trash-o c-p m-l-10 submit-delete']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//button[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
-	public void test21() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='É¸Ñ¡¼Û¸ñ']");
-		Thread.sleep(1000);
-		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-btn-xs am-radius am-icon-edit c-p submit-edit']");
-		webtest.click("xpath=//button[text()='±£´æ']");
-	}
+//	@Test(description = "ç¼–è¾‘ä»·æ ¼",priority = 20)
+//	public void test21() throws InterruptedException{
+//		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+//		webtest.click("xpath=//span[text()='ç­›é€‰ä»·æ ¼']");
+//		webtest.enterFrame("ifcontent");
+//		webtest.click("xpath=//button[text()='ç¼–è¾‘']");
+//		webtest.click("xpath=//button[text()='ä¿å­˜']");
+//		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+//		assertFalse(flag);
+//	}
 	
-	@Test
+	@Test(description = "æ–°å¢ç­›é€‰ä»·æ ¼",priority = 21)
 	public void test22() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='É¸Ñ¡¼Û¸ñ']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='ç­›é€‰ä»·æ ¼']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-radius am-btn-xs am-icon-plus tree-submit-add']");
 		webtest.click("name=name");
 		webtest.type("name=name", "50-100");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
 //	@Test
 //	public void test23() throws InterruptedException{
-//		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-//		webtest.click("xpath=//span[text()='µØÇø¹ÜÀí']");
+//		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+//		webtest.click("xpath=//span[text()='åœ°åŒºç®¡ç†']");
 //		webtest.enterFrame("ifcontent");
 //		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-btn-xs am-radius am-icon-edit c-p submit-edit']");
-//		webtest.click("xpath=//button[text()='±£´æ']");
+//		webtest.click("xpath=//button[text()='ä¿å­˜']");
 //	}
 	
-	@Test
+	@Test(description = "æ–°å¢åœ°åŒº",priority = 22)
 	public void test24() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='µØÇø¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='åœ°åŒºç®¡ç†']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-radius am-btn-xs am-icon-plus tree-submit-add']");
 		webtest.click("name=name");
-		webtest.type("name=name", "½­ËÕÊ¡");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.type("name=name", "æ±Ÿè‹çœ");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
 
-	@Test
+	@Test(description = "ç¼–è¾‘å¿«é€’ä¿¡æ¯",priority = 23)
 	public void test25() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='¿ìµİ¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å¿«é€’ç®¡ç†']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-btn-xs am-radius am-icon-edit c-p submit-edit']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤å¿«é€’",priority = 24)
 	public void test26() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='¿ìµİ¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å¿«é€’ç®¡ç†']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//button[@class='am-btn am-btn-danger am-btn-xs am-radius am-icon-trash-o c-p m-l-10 submit-delete']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//button[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æ–°å¢å¿«é€’",priority = 25)
 	public void test27() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='¿ìµİ¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='å¿«é€’ç®¡ç†']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-radius am-btn-xs am-icon-plus tree-submit-add']");
 		webtest.click("name=name");
-		webtest.type("name=name", "test¿ìµİ");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.type("name=name", "testå¿«é€’");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "å®‰è£…æ”¯ä»˜æ–¹å¼",priority = 26)
 	public void test28() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ö§¸¶·½Ê½']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='æ”¯ä»˜æ–¹å¼']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='°²×°']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='å®‰è£…']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘æ”¯ä»˜æ–¹å¼",priority = 27)
 	public void test29() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ö§¸¶·½Ê½']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='æ”¯ä»˜æ–¹å¼']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//span[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "å¸è½½å·²æœ‰æ”¯ä»˜æ–¹å¼",priority = 28)
 	public void test30() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ö§¸¶·½Ê½']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='æ”¯ä»˜æ–¹å¼']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='Ğ¶ÔØ']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='å¸è½½']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤æ”¯ä»˜æ–¹å¼",priority = 29)
 	public void test31() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÍøÕ¾¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ö§¸¶·½Ê½']");
+		webtest.click("xpath=//span[text()='ç½‘ç«™ç®¡ç†']");
+		webtest.click("xpath=//span[text()='æ”¯ä»˜æ–¹å¼']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘å“ç‰Œç®¡ç†",priority = 31)
 	public void test33() throws InterruptedException{
-		webtest.click("xpath=//span[text()='Æ·ÅÆ¹ÜÀí']");
+		webtest.click("xpath=//span[text()='å“ç‰Œç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[9]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
-		Thread.sleep(1000);	
+		webtest.click("xpath=//span[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æŸ¥çœ‹å“ç‰Œè¯¦æƒ…",priority = 30)
 	public void test32() throws InterruptedException{
-		webtest.click("xpath=//span[text()='Æ·ÅÆ¹ÜÀí']");
+		webtest.click("xpath=//span[text()='å“ç‰Œç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[9]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 		webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤å“ç‰Œ",priority = 32)
 	public void test34() throws InterruptedException{
-		webtest.click("xpath=//span[text()='Æ·ÅÆ¹ÜÀí']");
+		webtest.click("xpath=//span[text()='å“ç‰Œç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[9]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-     	webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+     	webtest.click("xpath=//span[text()='ç¡®å®š']");
+     	boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 		
-	@Test
+	@Test(description = "æœç´¢å“ç‰Œ",priority = 33)
 	public void test35() throws InterruptedException{
-		webtest.click("xpath=//span[text()='Æ·ÅÆ¹ÜÀí']");
+		webtest.click("xpath=//span[text()='å“ç‰Œç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[9]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
 		webtest.click("name=f1p");
-		webtest.type("name=f1p", "Ç¿Éú");
+		webtest.type("name=f1p", "å¼ºç”Ÿ");
 		webtest.click("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		boolean flag =webtest.isDisplayed("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		assertTrue(flag);
 	}
 	
-	@Test
+	@Test(description = "æ–°å¢å“ç‰Œåˆ†ç±»",priority = 34)
 	public void test36() throws InterruptedException{
-		webtest.click("xpath=//span[text()='Æ·ÅÆ¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Æ·ÅÆ·ÖÀà']");
+		webtest.click("xpath=//span[text()='å“ç‰Œç®¡ç†']");
+		webtest.click("xpath=//span[text()='å“ç‰Œåˆ†ç±»']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-radius am-btn-xs am-icon-plus tree-submit-add']");
 		webtest.click("name=name");
 		webtest.type("name=name", "test01");
-		webtest.click("xpath=//button[text()='±£´æ']");
-	}
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);	
+		}
 	
-	@Test
+	@Test(description = "åˆ é™¤å“ç‰Œåˆ†ç±»",priority = 35)
 	public void test37() throws InterruptedException{
-		webtest.click("xpath=//span[text()='Æ·ÅÆ¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Æ·ÅÆ·ÖÀà']");
+		webtest.click("xpath=//span[text()='å“ç‰Œç®¡ç†']");
+		webtest.click("xpath=//span[text()='å“ç‰Œåˆ†ç±»']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//button[@class='am-btn am-btn-danger am-btn-xs am-radius am-icon-trash-o c-p m-l-10 submit-delete']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//button[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘å“ç‰Œåˆ†ç±»",priority = 36)
 	public void test38() throws InterruptedException{
-		webtest.click("xpath=//span[text()='Æ·ÅÆ¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Æ·ÅÆ·ÖÀà']");
+		webtest.click("xpath=//span[text()='å“ç‰Œç®¡ç†']");
+		webtest.click("xpath=//span[text()='å“ç‰Œåˆ†ç±»']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//button[@class='am-btn am-btn-secondary am-btn-xs am-radius am-icon-edit c-p submit-edit']");
-		webtest.click("xpath=//button[text()='±£´æ']");
-		Thread.sleep(1000);	
+		webtest.click("xpath=//button[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");	
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æŸ¥çœ‹ä»“åº“è¯¦æƒ…",priority = 37)
 	public void test39() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[10]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 		webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘ä»“åº“",priority = 38)
 	public void test40() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[10]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//span[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤ä»“åº“",priority = 39)
 	public void test41() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[10]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æœç´¢ä»“åº“",priority = 40)
 	public void test42() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
 		webtest.click("xpath=/html/body/div[1]/div[1]/div/ul/li[10]/ul/li[1]/a/span");
 		webtest.enterFrame("ifcontent");
 		webtest.click("name=f1p");
-		webtest.type("name=f1p", "ÉÏº£²Ö¿â");
+		webtest.type("name=f1p", "ä¸Šæµ·ä»“åº“");
 		webtest.click("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		boolean flag =webtest.isDisplayed("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		assertTrue(flag);
 	}
 	
-	@Test
+	@Test(description = "æŸ¥çœ‹ä»“åº“å•†å“è¯¦æƒ…",priority = 41)
 	public void test43() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
-		webtest.click("xpath=//span[text()='²Ö¿âÉÌÆ·¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
+		webtest.click("xpath=//span[text()='ä»“åº“å•†å“ç®¡ç†']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 		webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘ä»“åº“å•†å“",priority = 42)
 	public void test44() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
-		webtest.click("xpath=//span[text()='²Ö¿âÉÌÆ·¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
+		webtest.click("xpath=//span[text()='ä»“åº“å•†å“ç®¡ç†']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='¿â´æ']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//span[text()='åº“å­˜']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤ä»“åº“å•†å“",priority = 43)
 	public void test45() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
-		webtest.click("xpath=//span[text()='²Ö¿âÉÌÆ·¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
+		webtest.click("xpath=//span[text()='ä»“åº“å•†å“ç®¡ç†']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æœç´¢ä»“åº“å•†å“",priority = 44)
 	public void test46() throws InterruptedException{
-		webtest.click("xpath=//span[text()='²Ö¿â¹ÜÀí']");
-		webtest.click("xpath=//span[text()='²Ö¿âÉÌÆ·¹ÜÀí']");
+		webtest.click("xpath=//span[text()='ä»“åº“ç®¡ç†']");
+		webtest.click("xpath=//span[text()='ä»“åº“å•†å“ç®¡ç†']");
 		webtest.enterFrame("ifcontent");
 		webtest.click("name=f1p");
-		webtest.type("name=f1p", "Æ»¹û£¨Apple£©iPhone 6 Plus (A1524)ÒÆ¶¯ÁªÍ¨µçĞÅ4GÊÖ»ú ½ğÉ« 16G ");
+		webtest.type("name=f1p", "è‹¹æœï¼ˆAppleï¼‰iPhone 6 Plus (A1524)ç§»åŠ¨è”é€šç”µä¿¡4Gæ‰‹æœº é‡‘è‰² 16G ");
 		webtest.click("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		boolean flag =webtest.isDisplayed("xpath=//button[@class='am-btn am-btn-primary am-radius am-btn-xs btn-loading-example am-icon-search']");
+		assertTrue(flag);
 	}
 	
-	@Test
+	@Test(description = "æŸ¥çœ‹é¦–é¡µå¯¼èˆªè¯¦æƒ…",priority = 45)
 	public void test47() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÊÖ»ú¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ê×Ò³µ¼º½']");
+		webtest.click("xpath=//span[text()='æ‰‹æœºç®¡ç†']");
+		webtest.click("xpath=//span[text()='é¦–é¡µå¯¼èˆª']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 		webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘é¦–é¡µå¯¼èˆª",priority = 46)
 	public void test48() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÊÖ»ú¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ê×Ò³µ¼º½']");
+		webtest.click("xpath=//span[text()='æ‰‹æœºç®¡ç†']");
+		webtest.click("xpath=//span[text()='é¦–é¡µå¯¼èˆª']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//span[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+//		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+//		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤é¦–é¡µå¯¼èˆª",priority = 47)
 	public void test49() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÊÖ»ú¹ÜÀí']");
-		webtest.click("xpath=//span[text()='Ê×Ò³µ¼º½']");
+		webtest.click("xpath=//span[text()='æ‰‹æœºç®¡ç†']");
+		webtest.click("xpath=//span[text()='é¦–é¡µå¯¼èˆª']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "æŸ¥çœ‹ç”¨æˆ·ä¸­å¿ƒå¯¼èˆªè¯¦æƒ…",priority = 48)
 	public void test50() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÊÖ»ú¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÃ»§ÖĞĞÄµ¼º½']");
+		webtest.click("xpath=//span[text()='æ‰‹æœºç®¡ç†']");
+		webtest.click("xpath=//span[text()='ç”¨æˆ·ä¸­å¿ƒå¯¼èˆª']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='ÏêÇé']");
+		webtest.click("xpath=//span[text()='è¯¦æƒ…']");
 		webtest.click("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		boolean flag =webtest.isDisplayed("xpath=//span[@class='am-close am-close-alt am-icon-times am-close-spin']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "ç¼–è¾‘ç”¨æˆ·ä¸­å¿ƒå¯¼èˆª",priority = 49)
 	public void test51() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÊÖ»ú¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÃ»§ÖĞĞÄµ¼º½']");
+		webtest.click("xpath=//span[text()='æ‰‹æœºç®¡ç†']");
+		webtest.click("xpath=//span[text()='ç”¨æˆ·ä¸­å¿ƒå¯¼èˆª']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='±à¼­']");
-		webtest.click("xpath=//button[text()='±£´æ']");
+		webtest.click("xpath=//span[text()='ç¼–è¾‘']");
+		webtest.click("xpath=//button[text()='ä¿å­˜']");
+		boolean flag =webtest.isDisplayed("xpath=//button[text()='ä¿å­˜']");
+		assertFalse(flag);
 	}
 	
-	@Test
+	@Test(description = "åˆ é™¤ç”¨æˆ·ä¸­å¿ƒå¯¼èˆª",priority = 50)
 	public void test52() throws InterruptedException{
-		webtest.click("xpath=//span[text()='ÊÖ»ú¹ÜÀí']");
-		webtest.click("xpath=//span[text()='ÓÃ»§ÖĞĞÄµ¼º½']");
+		webtest.click("xpath=//span[text()='æ‰‹æœºç®¡ç†']");
+		webtest.click("xpath=//span[text()='ç”¨æˆ·ä¸­å¿ƒå¯¼èˆª']");
 		webtest.enterFrame("ifcontent");
-		webtest.click("xpath=//span[text()='É¾³ı']");
-		webtest.click("xpath=//span[text()='È·¶¨']");
+		webtest.click("xpath=//span[text()='åˆ é™¤']");
+		webtest.click("xpath=//span[text()='ç¡®å®š']");
+		boolean flag =webtest.isDisplayed("xpath=//span[text()='ç¡®å®š']");
+		assertFalse(flag);
 	}
 }
