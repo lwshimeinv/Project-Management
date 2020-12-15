@@ -5,8 +5,8 @@ import {RouteWithSubRoutes} from './App';
 import { NavLink , Route} from 'react-router-dom';
 import { List } from 'antd-mobile';
 import ListItem from 'antd-mobile/lib/list/ListItem';
-import Users from './Users';
-import Letter from './Letter';
+import Users from './Users'
+import Letter from './Letter'
 import Envelope from './Envelope';
 import Paper from './Paper';
 import Stamp from './Stamp';
@@ -15,6 +15,9 @@ import Purchased_Envelope from './Purchased_Envelope';
 import Purchased_Paper from './Purchased_Paper';
 import Purchased_Stamp from './Purchased_Stamp';
 import Purchased_FontFamily from './Purchased_FontFamily';
+import Report from './Report'
+import Histogram from './Histogram'
+import Pie from './Pie'
 function Store(props) {
     if (!props.warn) {
       return null;
@@ -117,8 +120,7 @@ class Home extends React.Component {
                         <Date warn={this.state.datemessage} />
                         <ListItem  onClick={this.handleToggleClick} arrow={this.state.datemessage ? 'down': 'horizontal'} platform="android">报告管理</ListItem>
                         <Store warn={this.state.showWarning} />
-                        <ListItem  onClick={this.handleBought} arrow={this.state.bought ? 'down': 'horizontal'} platform="android">已购买</ListItem>
-                        <PurchasedStore warn={this.state.bought} />
+                       
                     </List>
                 </div>
                 <div className='content'>
@@ -132,6 +134,9 @@ class Home extends React.Component {
                     <Route  path='/Purchased_Paper' component={Purchased_Paper}/>
                     <Route  path='/Purchased_Stamp' component={Purchased_Stamp}/>
                     <Route  path='/Purchased_FontFamily' component={Purchased_FontFamily}/>
+                    <Route  path='/Report' component={Report}/>
+                    <Route  path='/Histogram' component={Histogram}/>
+                    <Route  path='/Pie' component={Pie}/>
                 </div>
             </div>
         );

@@ -3,9 +3,9 @@ import React from 'react'
 const FontFamily = () => {
     return (
         <div>
-            FontFamily66
+            FontFamily
         </div>
     )
 }
 
-export default FontFamily
+export default FontFamily 

@@ -1,24 +1,4 @@
-// import React, { useEffect} from 'react'
 
-
-// //import routes from '../router.config'
-// //import {RouteWithSubRoutes,PrivateRoute} from '../App01'
-
-// const Purchased_FontFamily = () => {
-//     return (
-//         <div>
-//             <div>测试页面</div>
-//             {/* <ol>
-//                 <li><NavLink to='/doc/core'>核心概念</NavLink></li>
-//                 <li><NavLink to='/doc/guide'>高级指引</NavLink></li>
-//                 <li><NavLink to='/doc/api'>API</NavLink></li>
-//                 <li><NavLink to='/doc/hooks'>Hooks</NavLink></li>
-//             </ol> */}
-//         </div>
-//     )
-// }
-
-// export default Purchased_FontFamily
 
 import React from 'react'
 import {
@@ -27,9 +7,17 @@ import {
 } from 'react-router-dom'
 import './Case.css';
 
-const Purchased_FontFamily = () => {
+// 用例列表
+// 熊子威
+const Case_list = () => {
     return (
         <div>
+            <div class="smallBox">
+                <div class="box1">SHOPXO测试用例列表</div>
+                <div class="box2">说明1：在ID中输入用例编号后回车，可显示这条用例的信息.</div>
+                <div class="box3">说明2：如果要插入新的用例，ID一栏必须清空才能正常插入用例.</div>
+                <div class="box4">说明3：可修改参数进行[用例执行],测试通过通过[更新测试用例]更新至数据库.</div>
+            </div>
             <div className='FontFamily'>
                 <li><NavLink to='/doc/hooks'>测试主页</NavLink></li>
                 <li><NavLink to='/doc/hooks'>项目</NavLink></li>
@@ -57,7 +45,7 @@ const Purchased_FontFamily = () => {
                     <li><NavLink to='/doc/api'>导出</NavLink></li>
                     <li><NavLink to='/doc/hooks'>批量提交Bug</NavLink></li>
             </div>
-            <img src={require('./image/table.jpg')} style={{width:'100%'}} />
+            <img src={require('./img/table3.jpg')} style={{width:'100%'}} />
             <div className = 'FontFamily3'>
                     {/* <text>自动化用例列表</text> */}
                     <text style={{color:"bule"}}><NavLink to='/doc/guide'>自动化用例列表</NavLink></text>
@@ -67,4 +55,4 @@ const Purchased_FontFamily = () => {
     )
 }
 
-export default Purchased_FontFamily
+export default Case_list

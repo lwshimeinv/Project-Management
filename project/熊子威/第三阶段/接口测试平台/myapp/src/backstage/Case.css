@@ -1,6 +1,50 @@
 ul li{
     list-style: none;
 }
+.smallBox{
+    width: 95%;
+    height: 350px;
+    background: url(./img/case.png) no-repeat;
+    background-size: cover;
+    margin:-15px auto;
+    margin-top: 40px;
+}
+.box1{
+    float: left;
+    margin-top: 50px;
+    margin-left: 100px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 60px;
+}
+.box2{
+    float: left;
+    margin-top: 130px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.box3{
+    float: left;
+    margin-top: 145px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.box4{
+    float: left;
+    margin-top: 160px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
 .FontFamily{
     display: inline;
     margin-right: 0px;

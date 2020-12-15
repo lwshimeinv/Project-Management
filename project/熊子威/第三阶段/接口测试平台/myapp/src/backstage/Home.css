@@ -1,29 +1,28 @@
 .header{
     width: 100%;
-    height: 54px;
+    height: 44px;
     margin-top: 0px;
-    background-color: #489DCC;
+    background-color: rgb(120, 56, 134);
     color: white;
     position: fixed;
     z-index: 1;
 
 }
-.header p{
-    margin-left: 20px;
-    line-height: 54px;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    margin-top: 0px;
-}
+
+
 .choose{
-    margin-top: 54px;
+    margin-top: 90px;
     position: fixed;
     width: 15%;
     height: 800px;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border:0;
     letter-spacing: 0.2em;
     font-size: 16px;
+    background: rgb(245, 245, 249);
+
 }
+
 .choose p{
     margin-left: 54px;
 }
