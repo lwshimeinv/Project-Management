@@ -1,0 +1,43 @@
+.header{
+    width: 100%;
+    height: 44px;
+    margin-top: 0px;
+    background-color: rgb(120, 56, 134);
+    color: white;
+    position: fixed;
+    z-index: 1;
+
+}
+
+
+.choose{
+    margin-top: 90px;
+    position: fixed;
+    width: 15%;
+    height: 800px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border:0;
+    letter-spacing: 0.2em;
+    font-size: 16px;
+    background: rgb(245, 245, 249);
+
+}
+
+.choose p{
+    margin-left: 54px;
+}
+.goods{
+    list-style: none;
+    margin-left: 45px;
+    font-size: 16px;
+}
+.goods li{
+    line-height: 30px;
+}
+.content{
+    margin-top: 54px;
+    width: 85%;
+    float: right;
+    height: 800px;
+    text-align: center;
+}

@@ -1,0 +1,100 @@
+.smallBox{
+    width: 95%;
+    height: 350px;
+    background: url(./img/case.png) no-repeat;
+    background-size: cover;
+    margin:-15px auto;
+}
+.box1{
+    float: left;
+    margin-top: 50px;
+    margin-left: 200px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 60px;
+}
+.box2{
+    float: left;
+    margin-top: 130px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.box3{
+    float: left;
+    margin-top: 145px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.box4{
+    float: left;
+    margin-top: 160px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.container {
+    height: 70px;
+
+    width: 800px;
+
+    margin: 50px auto 0 auto;
+
+}
+
+.parent {
+    position: relative;
+
+}
+
+.search {
+    width: 500px;
+
+    height: 40px;
+
+    border-radius: 18px;
+
+    outline: none;
+
+    border: 1px solid #ccc;
+
+    padding-left: 20px;
+
+    position: absolute;
+
+}
+
+.btn {
+    height: 35px;
+
+    width: 35px;
+
+    position: absolute;
+
+    background: url("img/设置.png") no-repeat -2px -99px;
+
+    top: 6px;
+
+    left: 285px;
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+}
+.pic{
+    margin-top: 10px;
+    height: 300px;
+    width:95%
+    /* padding-left:30px; */
+}
