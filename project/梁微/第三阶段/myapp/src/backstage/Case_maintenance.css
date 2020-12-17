@@ -1,0 +1,434 @@
+*{
+    padding: 0px;
+    margin: 0px;
+  }
+  ul,li{
+    list-style: none;
+  }
+ .img1{
+     width: 20px;
+     height: 20px;
+     margin-top: 14px;
+     float: left;
+     margin-left: 50px;
+ }
+ .bigBox{
+     height: 50px;
+     background-color: black;
+     color: blanchedalmond;
+     position: fixed;
+     width: 100%;
+     /* margin-left: 100px; */
+ }
+ .bigBox2{
+     margin-left: 220px;
+ }
+ 
+ #list{
+     float: left;
+     margin-top:12px;
+     margin-left: 20px;
+     background-color: black;
+     color: blanchedalmond;
+     border: none;
+ }
+ .img2{
+    width: 20px;
+    height: 20px;
+    margin-top: 14px;
+    float: left;
+    margin-left: 30px;
+    background-color:black;
+}
+#case_list{
+    background-color: black;
+    height: 20px;
+    margin-top: 15px;
+    float: left;
+    color:white;
+}
+.shopxo>a{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    color: white;
+}
+.Mapi>a{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    color: white;
+}
+.Http>a{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    color: white;
+}
+.GA>a{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    color: white;
+}
+.img3{
+    background-color: black;
+    width: 20px;
+    margin-top: 14px;
+    float: left;
+    margin-left: 30px;
+    height: 20px;
+}
+#tools{
+    height: 20px;
+    margin-top: 14px;
+    float: left;
+    background-color: black;
+    color:white;
+    border: none;
+}
+.tools>div{
+    float: left;
+    margin-top:15px;
+}
+.new{
+    float: left;
+    height: 18px;
+    margin-top: 15px;
+    background-color: red;
+    border-radius: 30%;
+}
+
+.img4{
+    background-color: black;
+    width: 20px;
+    margin-top: 14px;
+    float: left;
+    margin-left: 28px;
+    height: 20px;
+}
+
+#chart{
+    float: left;
+    margin-top:15px;
+    background-color: black;
+    color:white;
+    border:none;
+}
+
+.img5{
+    width: 20px;
+    height: 20px;
+    margin-top: 14px;
+    float: left;
+    margin-left: 30px;
+    background-color:black;
+}
+.need>select{
+    background-color: black;
+    height: 20px;
+    margin-top: 15px;
+    float: left;
+    color:white;
+    border: none;
+}
+#name{
+    float: left;
+    background-color: black;
+    height: 20px;
+    margin-top: 15px;
+    color:white;
+    margin-left:60px;
+}
+.name>select{
+    border:none;
+}
+
+.smallBox{
+    width: 95%;
+    height: 350px;
+    background: url(./img/case.png) no-repeat;
+    background-size: cover;
+    margin:-15px auto;
+}
+.box1{
+    float: left;
+    margin-top: 50px;
+    margin-left: 100px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 60px;
+}
+.box2{
+    float: left;
+    margin-top: 130px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.box3{
+    float: left;
+    margin-top: 145px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.box4{
+    float: left;
+    margin-top: 160px;
+    margin-left: -620px;
+    height: 150px;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+}
+.main{
+    float: left;
+    height:80px;
+}
+.p0{
+    float: left;
+    margin-left: 210px;
+    margin-top:60px ;
+}
+.p0>span{
+    color:red;
+    font-weight: bold;
+}
+.p1{
+    float: left;
+    margin-left:100px;
+    margin-top: 30px;
+    padding-top: 10px;
+    height:30px;
+    color:white;
+    font-weight: bold;
+    border-radius: 13%;
+    background-color: orange;
+}
+.p2{
+    float: left;
+    margin-left:20px;
+    margin-top: 30px;
+    padding-top: 10px;
+    height:30px;
+    color:white;
+    font-weight: bold;
+    border-radius: 13%;
+    background-color: cornflowerblue;
+}
+.p3{
+    float: left;
+    margin-left:20px;
+    margin-top: 30px;
+    padding-top: 10px;
+    height:30px;
+    color:white;
+    font-weight: bold;
+    border-radius: 13%;
+    background-color: blue;
+}
+
+#li1>div{
+    float: left;
+    margin-left: 100px;
+    
+}
+#li1>div>input{
+    margin-left:40px;
+    width:240px;
+    height: 30px;
+    margin-right:40px;
+    border-radius: 5%;
+}
+#li2>div{
+    float: left;
+    margin-left: -655px;
+    margin-top: 40px;
+}
+#li2>div>div{
+    color: red;
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    width: 10px;
+    background-color: khaki;
+}
+#li2>div>select{
+    margin-left:40px;
+    width:245px;
+    height: 30px;
+    margin-right:40px;
+    border-radius: 5%;
+}
+#li3>div{
+    float: left;
+    margin-left: -669px;
+    margin-top: 80px;
+}
+#li3>div>div{
+    color: red;
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    width: 10px;
+    background-color: khaki;
+}
+#li3>div>form{
+    height: 30px;
+    margin-right:130px;
+    border-radius: 5%;
+    display: inline-block;
+}
+#li3>div>form>input{
+    margin-left: 50px;
+}
+#li4>div{
+    float: left;
+    margin-left: -640px;
+    margin-top: 100px;
+}
+#li4>div>div{
+    color: red;
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    width: 10px;
+    background-color: khaki;
+}
+#li4>div>select{
+    margin-left:40px;
+    width:245px;
+    height: 30px;
+    margin-right:40px;
+    border-radius: 5%;
+}
+#li5>div{
+    float: left;
+    margin-left: -654px;
+    margin-top: 135px;
+}
+#li5>div>div{
+    color: red;
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    width: 10px;
+    background-color: khaki;
+}
+#li5>div>select{
+    margin-left:40px;
+    width:245px;
+    height: 30px;
+    border-radius: 5%;
+}
+#li6>div{
+    float: left;
+    margin-left: -650px;
+    margin-top: 170px;
+}
+#li6>div>div{
+    color: red;
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    width: 10px;
+    background-color: khaki;
+}
+#li6>div>select{
+    margin-left:40px;
+    width:800px;
+    height: 30px;
+    border-radius: 5%;
+}
+#li7>div{
+    float: left;
+    margin-left: 125px;
+    margin-top: 10px;
+}
+#li7>div>select{
+    margin-left:40px;
+    width:800px;
+    height: 30px;
+    border-radius: 5%;
+}
+#li8,#li9{
+    display: inline-block;
+    margin-top: 10px;
+}
+#li8>div{
+    float: left;
+    margin-left: -60px;
+    margin-right: 40px;
+}
+#li8>textarea{
+    width:700px;
+    height: 70px;
+    border-radius: 5%;
+}
+#li8>span{
+    display: inline-block;
+    margin-left: 30px;
+    width: 80px;
+    height: 20px;
+    font-weight: bold;
+    color:white;
+    border-radius: 8%;
+    padding-top: 2px;
+    background-color: dodgerblue;
+}
+#li9>div{
+    float: left;
+    margin-left: -140px;
+    margin-right:40px;
+}
+#li9>textarea{
+    width:700px;
+    height: 70px;
+    border-radius: 5%;
+}
+#li10>div{
+    margin-left: -110px;
+    margin-top:10px;
+}
+#li10>div>div{
+    color: red;
+    display: inline-block;
+    font-weight: bold;
+    height: 10px;
+    margin-left:-40px;
+    width: 10px;
+    background-color: khaki;
+}
+#li10>div>form{
+    height: 30px;
+    border-radius: 5%;
+    display: inline-block;
+}
+#li10>div>form>input{
+    margin-left: 70px;
+}
+#li10>div>span{
+    margin-left: 100px;
+}
+#li11{
+    height:30px;
+    margin-left: 30px;
+}
+#li11>div>input{
+    margin-left:30px;
+    width:800px;
+    height: 30px;
+    border-radius: 5%;
+}
+.end{
+    margin-top: 60px;
+    height:100px;
+    color: cadetblue;
+}
+
